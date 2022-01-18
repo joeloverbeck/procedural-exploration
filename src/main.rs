@@ -1,5 +1,11 @@
 use bevy::prelude::*;
 
 fn main() {
-    App::build().run();
+    App::new()
+        .add_system(hello_world_system)
+        .run();
+}
+
+fn hello_world_system() {
+    println!("hello world");
 }
