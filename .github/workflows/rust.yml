@@ -7,6 +7,11 @@ jobs:
     name: Check
     runs-on: ubuntu-latest
     steps:
+      - name: setup-1
+        run: sudo apt-get update
+      - name: setup-2
+        run: sudo apt-get install libsdl2-dev
+
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
         with:
@@ -21,6 +26,11 @@ jobs:
     name: Test Suite
     runs-on: ubuntu-latest
     steps:
+      - name: setup-1
+        run: sudo apt-get update
+      - name: setup-2
+        run: sudo apt-get install libsdl2-dev
+
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
         with:
@@ -35,6 +45,11 @@ jobs:
     name: Clippy + rustfmt
     runs-on: ubuntu-latest
     steps:
+      - name: setup-1
+        run: sudo apt-get update
+      - name: setup-2
+        run: sudo apt-get install libsdl2-dev
+
       - name: Checkout sources
         uses: actions/checkout@v2
 
@@ -61,6 +76,11 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
+      - name: setup-1
+        run: sudo apt-get update
+      - name: setup-2
+        run: sudo apt-get install libsdl2-dev
+
       - uses: actions/checkout@v1
       - uses: actions-rs/toolchain@v1
         with:
